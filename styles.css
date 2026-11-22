@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+.post {
+    text-align: left;
+    padding-top: 30px;
+}
+
+.posts {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: #ffffff;
+}
+
+time {
+    color: #aaaaaa;
+}
