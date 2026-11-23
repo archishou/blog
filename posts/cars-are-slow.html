@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Post</title>
+    <title>Cars are actually pretty slow</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 
@@ -17,8 +17,104 @@
         <hr>
 
         <p>
-            Write some stuffs. hi lala burrito :D
+        
+        Cars are slower than I originally thought. I am reading a book called 'Walkable Cities' by Jeff Speck
+        and came across this quote. "The model American puts in 1600 hours to get 7500 miles, less than 5 miles
+        per hour." That was a pretty facinating quote to me. This is a cited text in the book, with the original 
+        quote coming from Illich, Toward a History of Needs. I want to read that book next. The argument of the author
+        is that although the speedometer reads 30 miles per hour or whatever when you travel, we aren't accounting
+        for the hidden cost of time it takes in labor to upkeep the car. 
         </p>
+
+        <p>
+
+        As an example, a car could travel 10 miles in an hour. However, if the car cost $30 to buy and it took you two hours of 
+        working to get $30. Then really travelling 10 miles took you 1 hour in travel, plus two hours in labor to buy the car.
+        That's 10 miles for 3 hours of time or really 3ish miles per hour. That's a toy example and so I wanted to try looking 
+        at real numbers to see how fast cars actually are.
+
+        </p>
+
+        <p>
+        The model we're trying to figure out is speed = miles travelled / (time in car + time for labor).
+        Time for labor is all the time it takes to make money to pay for the car we're actually using to commute.
+        So we've gotta work out what all the costs are for a car. There are many, but the biggest ones are the
+        cost of car, insurance, fuel, maintaince, tolls. Then we've gotta figure out the time costs. There are really just two.
+        One is how long it takes once you're in your car to drive to your destination. The second are other things like filling
+        up for gas, looking for parking, going to the maintance shop and dealing with those people etc.
+
+        </p>
+
+        </p>
+        Monetary Costs: Cost of car, Insurance, Fuel, Maintaince, Tolls.
+
+        </p>
+        </p>
+        Time Costs: Time for travel, Filling for Gas, Looking for Parking, Maintenance Shop.
+        </p>
+
+        <p>
+        <a href="https://www.fhwa.dot.gov/policyinformation/pubs/our_nations_highways_2026/drivers.cfm">FHWA</a>, The Federal
+        Highway Association, provies a bunch of good data on the average driver. The average driver travelled 13,735 miles over
+        all of 2024.
+        </p>
+
+        <p>
+        Computing the average time a person spends in a car per year driving is more complex. <a href="https://truedrivingcost.com">TrueDrivingCost</a> has done seem really worth while analysis here that I recommend <a href=https://truedrivingcost.com/articles/how-many-hours-americans-drive#the-numbers>reading</a>. 
+        The general gist of it though is that the FHWA publishes a survey called the NHTS which gets a bunch of partcipants (7500 in 2022), to record
+        for 24 hours every bit of travel they do and a bunch of data about that travel. Then each of those surveyed results are weighted against the 
+        census so we can better capture the average american driver. There are two things that matter out of that survey which are how fast are people 
+        driving on average and how far are they travelling. We can use both to figure out how long are people driving on average.
+        In the end, we get around 457 hours on average for a driver in a car per year. That works out to 75 minutes per day which seems right for a 30
+        to 35 minute commute plus some errands driving up the average.
+        </p>
+
+        <p>
+        Next is how much does the average person spend on thier car (per year). This one's pretty simple! The Bureu of Labor Statistics publishes basically
+        exactly <a href="https://www.bls.gov/opub/reports/consumer-expenditures/2024/home.htm">that</a>.
+        From the 2024 study there's a portion describing vehcile purchasing being 5,337 per year, gas as 2,645 per year and other expenses as 4,206.
+        Thats a total of $12,188 per year on cars. The catch is that this is per household and of course in america, every household owns more than 1 car.
+        BLS publishes that households own on average 1.9 cars. So per car, this is $6414 per year.
+        </p>
+
+        <p>
+        For median take home wage, BLS again publishes a bunch of stats. <a href="https://www.bls.gov/news.release/wkyeng.htm">This</a> publishes 
+        the median weekly wage which for Q3 in 2026 was $1,239 (seasonally adjusted) or $64,428 per year. This is yearly income before taxes. 
+        I assumed single filer status for federal taxes. For an income of $64,428, a single filer will pay $5,551.36 in federal income taxes 
+        after the 2026 $16,100 standard deduction, leaving us with $58,876.64. Though there's still state income and payroll taxes to worry about :/. 
+        For payroll taxes there's Medicare and Social Security. Again based on the <a href="https://www.irs.gov/taxtopics/tc751">tax codes</a> given 
+        by the IRS, the taxes for both of those are $4,928.74 for a new total of $53,947.90 per year. Finally, there are state taxes. 
+        State taxes vary a TON so I'm just using a flat 2% as a rough nationwide estimate. That's $1,288.56 from our original income leaving us 
+        with $52,659.34 for the year. For 2080 working hours in a year 52,659.34 / 2080 is $25.31 per hour for the average person.
+        </p>
+
+        <p>
+        Ok now we have basically all the key numbers. Drivers drive approx 13,735 miles per year. They drive for approx 457 hours per year. 
+        They spend $6414 per year on their car. And they make $52,659.34 per year or $25.31 per hour (on average).
+        </p>
+
+        <p>
+        First we should figure out how fast the average driver travels today. 13,735 miles per year divided by 457 per year is 30.1 mph.
+
+        If it costs $6414 per year to operate a car and we on average make $25.31 per hour, then 6414 / 25.31 = 253.4 hours of work per year to 
+        afford the car. 
+
+        If our speed was miles travelled / (time driving + time working), then 13,735 / (457 + 253.4) = 19.3mph.
+
+        So on average, we're all actually driving around 19mph, which is 36% less than what we might expect.
+        </p>
+
+        <p>
+        Also, note that if anything this computation is actually underselling it. We're not accounting for any sort of car managment. Time at the gas
+        statation, time spent looking for parking, time looking for where your car is etc etc. I also didn't include local taxes which for places like 
+        NYC is .... A LOT. So in reality this number is probably much worse.
+        </p>
+
+        <p>
+        I didn't quite get the same numbers as my book, but still pretty interesting. Basically a bike and a car are more or less the same pace lol and
+        cars are slower the less money you make and faster the more you make. 
+        </p>
+
 
     </main>
 </body>
